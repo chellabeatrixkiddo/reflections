@@ -1,0 +1,13 @@
+1. git --version : gives the version of Git installed on the machine
+2. git log : gives the history of the different commits
+3. git log --stat
+4. git diff <commit version 1> <commit version 2> : gives the differences between the two versions of the file
+5. git clone <url of the repository> : copy an entire repository from one computer to another computer
+6. git config --global color.ui auto  : to enable color coded differences when using the diff command. git config will change the settings
+ in git and the --global flag means that the changes in settings will apply to all the projects in git and not just this one.
+7. git checkout <commit id> : resetting all of your files to how they were at the time that commit was made. That is restoring the file to a previous
+point in time.
+8. git config --global core.editor "edit -w" : This is to set TextWrangler as the default editor for Git.
+9. git init : Initialises empty git repository.
+10. git status : tracks the status of the commits
+11. git add <file name> : command to add files to the staging area, which is in between the working directory and the git repository.
