@@ -1,0 +1,20 @@
+1.How did viewing a diff between two versions of a file help you see the bug that was introduced? ( git diff <version-id-1> <version-id-2> )
+The diff command marked the lines deleted with a ‘-‘ and the lines added with a ‘+’, which easily pointed out things that we should be looking for while debugging.
+
+2.How could having easy access to the entire history of a file make you a more efficient programmer in the long term? ( git log or git log —-stat )
+Having the entire history of a file/program will help us to make comparisons, or go through previous working versions, in case our code breaks down.
+
+3.What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google docs does?
+The Pros of manually choosing when to commit: This will have fewer files in the history and may not clutter up the space. The Cons of manual commit: If we choose to commit after r a long time or after making more than some changes, then, there is a possibility of loosing the changes in between commits.
+
+4.Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+When there are multiple files that are logically related to each other it makes sense to track changes made in them, together, because modifications done in one file might most probably affect the code in the other files. Whereas in version control systems like Google Docs, each document is supposed to be logically independent.
+
+5.How can you use the commands git log and git diff to view the history of files?
+git log - displays the list of all the commits that were made to the file from the beginning along with the commit id. git diff <commit id 1> <commit id 2> - can be used to get the difference between the two versions that is the two commits of the file.
+
+6.How might using version control make you more confident to make changes that could break something?
+Because since we commit at different points in time, we can always switch to an older version of the file using git checkout <commit id>, in case some changes that we made breaks some existing functionality.
+
+7. Now that you have the workspace set up, what do you want ot try and use Git for?
+To create a new project workspace on git with the code files and then commit them after making changes.
