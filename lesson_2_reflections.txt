@@ -4,3 +4,10 @@ When we initialise a repository using the command git init, a new empty git repo
 The staging area is an intermediate area between the working directory and the git repository. We can add files that we wish to commit 
 to the staging area using the command git add <file name> and then when we run git commit, the entire staging area contents are added 
 to the git repository.
+3.How can you use the staging area to make sure you have one commit per logical change?
+Instead of committing each and every physical change that we do (that are part of the same logical change), we can add  these to the
+staging area. Once all the changes corresponding to the logical change are done, we can then run the git commit, to add the entire staging
+area contents to the git repository.
+4.What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+Suppose we wish to work on a new feature or enhancement, it is always wise to keep the working code untouched and do our 
+modifications on a copy of it. To do this git allows us to create a new branch where we can work, while the main branch can remain intact.
