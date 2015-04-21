@@ -11,3 +11,13 @@ area contents to the git repository.
 4.What are some situations when branches would be helpful in keeping your history organized? How would branches help?
 Suppose we wish to work on a new feature or enhancement, it is always wise to keep the working code untouched and do our 
 modifications on a copy of it. To do this git allows us to create a new branch where we can work, while the main branch can remain intact.
+5.How do the diagrams help you visualize the branch structure?
+The diagram representing the branch structure, helps in knowing the parent-child relationship between the different commits and also spot
+out the commits that are unreachable.
+6.What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+Merging two branches together gives a commit with the combined features and changes made in two different versions of the code.
+7.What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+When we do merging manually we can resolve the conflicts that is changes made to the same part of the code and resolve them in the best way
+instead of allowing git itself to decide on that when doing an automatic merge.
+
+

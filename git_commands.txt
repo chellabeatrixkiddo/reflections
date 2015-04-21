@@ -5,9 +5,61 @@
 5. git clone <url of the repository> : copy an entire repository from one computer to another computer
 6. git config --global color.ui auto  : to enable color coded differences when using the diff command. git config will change the settings
  in git and the --global flag means that the changes in settings will apply to all the projects in git and not just this one.
-7. git checkout <commit id> : resetting all of your files to how they were at the time that commit was made. That is restoring the file to a previous
-point in time.
+7. git checkout <commit id> : resetting all of your files to how they were at the time that commit was made. That is restoring the file 
+to a previous point in time.
 8. git config --global core.editor "edit -w" : This is to set TextWrangler as the default editor for Git.
 9. git init : Initialises empty git repository.
 10. git status : tracks the status of the commits
 11. git add <file name> : command to add files to the staging area, which is in between the working directory and the git repository.
+12. git commit : this command will cause the entire staging area contents to be added to the git repository.
+13. git diff : (without any arguments) this will compare the versions of files in the working directory and the version of files 
+present in the staging area.
+14. git diff --staged : this command compares the contents of the versions of the files that are present in the staging area with the 
+versions of the files that are present in the most recent commit in the repository.
+15. git reset --hard : this command discards changes made to the working directory or staging area.
+16. git checkout master : 
+17. git branch : (without any arguments) lists out the branches available for the project. The branch which is the last one to be checked
+out appears with a * prefix.
+    git branch -a : (all branches) including the origin/master remote master branch
+18. git branch <branch name> : creates a new branch with the branch name.
+19. git log --graph --oneline <branch name1> <branch name2> : to visualize the different commits (given in branch name1,2 etc.) in the 
+form of a graph.
+19. git checkout -b <branch name> : Suppose we are in the detached HEAD state and working on a new commit (that is creating a new commit
+by giving git checkout but without bothering to create a branch). In this case, the current checked out node is Unreachable, hence will
+not show up when we run git log. So if we want it to be reachable, then we can decide to create new branch for it, using this command.
+This is equivalent to doing this: git branch <new branch name> //create a new branch
+                                  git checkout <new branch name> //checkout that new branch
+20. git merge coins master : merges the coins branch into the master branch and creates a new commit which will now become the checked out
+master branch.
+21. git merge master easymode : the other way round of the above. that is merge master branch version into the easymode branch.
+that is the code in the latest version of master wil be merged into the easy mode branch that we are working on, while the master is not 
+affected and is still our official version (that is checked out version).
+22. git show <commit id> : gives the difference between a commit and its parent (that is the lines inserted / deleted).
+23. git branch -d <branch name> : this command does not delete the commit but only deletes the label of the branch.
+24. git remote : (without any arguments) to see the list of all the remotes on this repository.
+25. git remote -v : (verbose) to see the list of all remotes but more information is provided.
+26. git remote add origin <repository url> : to add a remote repository. origin says that there is only one remote repository.
+27. git push <remote name> <local branch name> : to send the changes to the remote, that is like uploading ur local copy of the repository to the git server.
+28. git pull <remote name> <local branch name> : when we make changes directly in the remote (that is directly in the github) our local
+copy of the repository is not in sync with the recent changes. So we want to pull those changes into our local repository.
+
+Clone: github to local (or) local to local
+Fork: github to github - take an existing github repository and create a copy of it
+
+Fetch: Suppose we have a local copy of a remote and we are working on it locally.
+There is an additional label that points to the 'remote tracking master branch', that is it refers to the master branch in the remote github
+repository when we pulled it. The format of the label is: 'remote_name/branch_name' like 'origin/master'
+So we have updated something and committed it, so the 'master' now points to the most recent commit.
+But this commit is not yet 'pushed' to the remote repository on github.
+At the same time, a second collaborator modifies something directly on the github repository and commits it. So now the 'master' points to
+a newer commit on the remote.
+Now, if we push our commit to remote -- we will lose the commit made by the second collaborator on github.
+In this case, we use the 'git fetch' command which will update the local copy of the 'remote tracking master branch', without affecting the 
+local changes. That is now the 'origin/master' label points to the new commit made by 2nd person and fetched by us.
+At this point, we can use git merge to merge the 'origin/master' and our local 'master' to create an updated 'master' which can then be
+staged and committed and then pushed into github.
+
+The same thing happens when we use a git pull command.
+So 'git pull origin master' == 'git fetch origin'
+                               'git merge master origin/master'
+                               
